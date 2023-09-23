@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baral Kuldeep</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Major Mono Display"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-image: linear-gradient(90deg, #000000 0%, #29323c 100%);
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
+        overflow-x: auto;
+        left: 0;
+      }
+      .nav {
+        position: fixed;
+        top: 0vh;
+        height: 5%;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.143);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 5px;
+        z-index: 4;
+      }
+      time,
+      #tl {
+        font-size: 100px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+        color: transparent;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.455);
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      sub {
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(90deg, orange, red);
+        -webkit-background-clip: text;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+      a {
+        text-decoration: none;
+        /* -webkit-text-fill-color: transparent; */
+        background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
+        font-family: Major Mono Display;
+        color: white;
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 2px 4px;
+        position: relative;
+        margin: 0px 4px;
+        box-shadow: 0px 0px 10px 4px rgba(41, 41, 41, 0.44);
+      }
+      a:hover:after {
+        display: block;
+      }
+
+      a[id="sign"] {
+        background-image: none;
+        border: none;
+        box-shadow: none;
+      }
+      title {
+        border-radius: 20px;
+      }
+      content {
+        height: 100vh;
+        width: 100vw;
+        background-image: linear-gradient(90deg, #29323c 0%, #000000 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      iframe {
+        position: absolute;
+        left: 100vw;
+        height: 95vh;
+        top: 5vh;
+        width: 100vw;
+        border: 0px;
+        z-index: 2;
+        background-image: linear-gradient(270deg, #29323c00 0%, #000000 100%);
+        /* transition: all 1s; */
+        /* opacity: 0; */
+      }
+      /* .hide {
+        left: 0vw;
+        transition: all 1s;
+        opacity: 1;
+      } */
+      img {
+        position: absolute;
+        left: 100vw;
+        top: 5vh;
+        width: 100vw;
+        height: 95vh;
+        background-size: cover;
+        z-index: -1;
+      }
+    </style>
+    <script>
+      // function tggle() {
+      //   ifr = document.querySelector("iframe");
+      //   ifr.classList.toggle("hide");
+      //   fr = document.querySelector("body");
+      //   console.log("ddone");
+      // }
+      setInterval(function () {
+        let t = document.getElementsByTagName("time");
+        let rem = document.getElementById("tl");
+        remTime = 0;
+        remMIN = 60;
+        remHOURS = 22;
+
+        a = new Date();
+
+        hours = a.getHours();
+        minute = 0;
+        seconds = 0;
+        if (hours > 12) {
+          hr = hours - 12;
+        }
+        if (a.getMinutes() < 10) {
+          minute = "0" + a.getMinutes();
+        } else {
+          minute = a.getMinutes();
+        }
+        if (a.getSeconds() < 10) {
+          seconds = "0" + a.getSeconds();
+        } else {
+          seconds = a.getSeconds();
+        }
+
+        b = hr + ":" + minute + ":" + seconds;
+        t[0].innerHTML = b;
+        remTime = remHOURS - hours + ":" + (remMIN - minute);
+        rem.innerHTML = remTime;
+        // console.log(t);
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    <div class="nav">
+      <left>
+        <a
+          href="https://kuldeepbaral87.github.io/My_Portfolio"
+          id="sign"
+          target="web"
+          onclick="tggle()"
+          >Baral Kuldeep
+        </a></left
+      >
+      <right>
+        <a href="http://127.0.0.1:8000/User/index/" title="GLS-Site">Project</a>
+        <a href="https://mail.google.com/mail/u/0/#inbox" title="kb007"
+          >GMail-1</a
+        >
+        <a href="https://mail.google.com/mail/u/1/#inbox" title="bk7"
+          >GMail-2</a
+        >
+        <a href="https://github.com/KuldeepBaral87" title="Github">Github</a>
+        <a
+          href="https://www.linkedin.com/in/kuldeep-baral-397475152/"
+          title="LinkedIn"
+          >LinkedIn</a
+        ></right
+      >
+    </div>
+
+    <content>
+      <time id="time"></time
+      ><sub style="font-style: italic">START DOING...</sub>
+      <timeleft id="tl">1</timeleft
+      ><sub style="font-style: italic">rem</sub></content
+    >
+    <iframe src="" name="web"></iframe>
+    <img src="iframeimg.jpg" />
+  </body>
+</html>
