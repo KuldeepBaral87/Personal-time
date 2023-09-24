@@ -167,14 +167,40 @@
         background-size: cover;
         z-index: -1;
       }
+      content i {
+        visibility: hidden;
+        position: absolute;
+        top: 50vh;
+        right: 10px;
+      }
+      @keyframes move {
+        from {
+        }
+
+        to {
+          transform: translateX(-10px);
+        }
+      }
+      .anime {
+        visibility: visible;
+        animation: move 1s infinite;
+      }
     </style>
     <script>
       window.onload = () => {
         var sidepane = document.getElementById("sidepanel");
+        anchor = document.querySelectorAll("#sidepanel a");
+        var arrow = document.getElementById("arrow-left");
+        anchor.forEach((element) => {
+          element.addEventListener("click", function () {
+            arrow.classList.add("anime");
+          });
+        });
 
         console.log(sidepane);
         sidepane.addEventListener("click", function () {
           sidepane.classList.toggle("hide");
+          // arrow.classList.toggle("anime");
           console.log("hua kya?");
         });
       };
@@ -250,9 +276,13 @@
     <content>
       <time id="time"></time
       ><sub style="font-style: italic">START DOING...</sub>
-      <timeleft id="tl">1</timeleft
-      ><sub style="font-style: italic">rem</sub></content
-    >
+      <timeleft id="tl">1</timeleft><sub style="font-style: italic">rem</sub>
+      <i
+        class="fa fa-angle-left"
+        id="arrow-left"
+        style="font-size: 36px; color: white"
+      ></i
+    ></content>
     <iframe src="" name="web"></iframe>
     <img src="RE.jpg" />
     <sidepanel id="sidepanel">
