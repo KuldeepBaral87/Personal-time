@@ -124,9 +124,18 @@
       } */
       #sidepanel.hide {
         top: calc(100vh - 200px);
-        background-color: #00315b;
+        background-color: #000000;
         transition: all 0.4s;
         width: fit-content;
+      }
+      #sidepanel a {
+        border-bottom: 1px solid rgb(40, 40, 40);
+        border-radius: 0px;
+        box-shadow: none;
+      }
+      #sidepanel a:hover {
+        color: #f7b100;
+        /* transform: scale(0.1); */
       }
       .hide > i {
         transform: rotate(180deg);
