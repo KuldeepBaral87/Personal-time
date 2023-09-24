@@ -68,6 +68,7 @@
         -webkit-text-fill-color: transparent;
         background-image: linear-gradient(90deg, orange, red);
         -webkit-background-clip: text;
+        background-clip: text;
         letter-spacing: 2px;
         font-weight: bold;
       }
@@ -123,7 +124,7 @@
         background-color: #00315b;
       } */
       #sidepanel.hide {
-        top: calc(100vh - 200px);
+        top: calc(100vh - 240px);
         background-color: #000000;
         transition: all 0.4s;
         width: fit-content;
@@ -172,6 +173,7 @@
         position: absolute;
         top: 50vh;
         right: 10px;
+        cursor: pointer;
       }
       @keyframes move {
         from {
@@ -194,6 +196,13 @@
         anchor.forEach((element) => {
           element.addEventListener("click", function () {
             arrow.classList.add("anime");
+            // document.getElementsByTagName("iframe").attr((src = ""));
+          });
+          flag = 0;
+          arrow.addEventListener("click", function () {
+            document.querySelector("html").scrollLeft = window.innerWidth;
+
+            // "linear-gradient(red, orange)";
           });
         });
 
@@ -201,7 +210,6 @@
         sidepane.addEventListener("click", function () {
           sidepane.classList.toggle("hide");
           // arrow.classList.toggle("anime");
-          console.log("hua kya?");
         });
       };
 
@@ -243,16 +251,22 @@
         rem.innerHTML = remTime;
         // console.log(t);
       }, 1000);
+
+
+      function toggleiframe()
+      {
+        document.querySelector("iframe").src=" ";
+        
+      }
     </script>
   </head>
   <body>
     <div class="nav">
       <left>
         <a
-          href="https://kuldeepbaral87.github.io/My_Portfolio"
+          href="#"
           id="sign"
-          target="web"
-          onclick="tggle()"
+          onclick="toggleiframe()"
           >Baral Kuldeep
         </a></left
       >
@@ -311,6 +325,12 @@
         href="https://kuldeepbaral.wixsite.com/kuldeep-art/gallery"
         target="web"
         >Gallery</a
+      >
+      <a
+        class="sides"
+        href="https://kuldeepbaral87.github.io/My_Portfolio""
+        target="web"
+        >Portfolio</a
       >
     </sidepanel>
   </body>
