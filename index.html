@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Major Mono Display"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <style>
       * {
         box-sizing: border-box;
@@ -42,6 +47,11 @@
         padding: 0px 5px;
         z-index: 4;
       }
+      right {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       time,
       #tl {
         font-size: 100px;
@@ -107,10 +117,38 @@
         /* opacity: 0; */
       }
       /* .hide {
-        left: 0vw;
-        transition: all 1s;
+        top: 200px;
+
         opacity: 1;
+        background-color: #00315b;
       } */
+      #sidepanel.hide {
+        top: calc(100vh - 200px);
+        background-color: #00315b;
+        transition: all 0.4s;
+        width: fit-content;
+      }
+      .hide > i {
+        transform: rotate(180deg);
+      }
+      #sidepanel {
+        /* width: 40px; */
+        display: flex;
+        overflow: hidden;
+        flex-flow: column;
+        align-items: center;
+        position: fixed;
+        height: fit-content;
+        /* bottom: -100px; */
+        top: calc(100vh - 36px);
+        z-index: 10;
+        gap: 10px;
+        right: 10px;
+        cursor: pointer;
+        background-color: #29323c;
+        border-radius: 10px;
+        transition: all 0.4s;
+      }
       img {
         position: absolute;
         left: 100vw;
@@ -122,6 +160,16 @@
       }
     </style>
     <script>
+      window.onload = () => {
+        var sidepane = document.getElementById("sidepanel");
+
+        console.log(sidepane);
+        sidepane.addEventListener("click", function () {
+          sidepane.classList.toggle("hide");
+          console.log("hua kya?");
+        });
+      };
+
       // function tggle() {
       //   ifr = document.querySelector("iframe");
       //   ifr.classList.toggle("hide");
@@ -198,5 +246,39 @@
     >
     <iframe src="" name="web"></iframe>
     <img src="RE.jpg" />
+    <sidepanel id="sidepanel">
+      <i class="fa fa-angle-up" style="font-size: 36px; color: white"></i>
+      <a
+        class="sides"
+        href="https://kuldeepbaral.wixsite.com/ahmedabadtours"
+        target="web"
+        >ahmedabadtours</a
+      >
+      <a class="sides" href="https://watchplanett.blogspot.com/" target="web"
+        >Watch planett</a
+      >
+      <a class="sides" href="https://1011quotes.blogspot.com/" target="web">
+        1011Quotes</a
+      >
+      <a
+        class="sides"
+        href="http://kuldeepbaral.000webhostapp.com/"
+        target="web"
+      >
+        another</a
+      >
+      <a
+        class="sides"
+        href="https://kuldeepbaral.wixsite.com/kuldeep-art/gallery"
+        target="web"
+        >Gallery</a
+      >
+    </sidepanel>
   </body>
 </html>
+<!-- https://1011quotes.blogspot.com/ 3-->
+<!-- http://kuldeepbaral.000webhostapp.com/ 4 -->
+<!-- https://kuldeepbaral.wixsite.com/kuldeep-art/gallery 5-->
+<!-- https://kuldeepbaral.wixsite.com/ahmedabadtours 1-->
+<!--NOT NOW https://earnandlearn4free.blogspot.com/ -->
+<!-- https://watchplanett.blogspot.com/ 2-->
