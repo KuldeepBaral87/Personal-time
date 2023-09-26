@@ -22,6 +22,7 @@
       }
       html {
         scroll-behavior: smooth;
+        
       }
       body {
         background-image: linear-gradient(90deg, #000000 0%, #29323c 100%);
@@ -124,7 +125,7 @@
         background-color: #00315b;
       } */
       #sidepanel.hide {
-        top: calc(100vh - 240px);
+        top: calc(100vh - 280px);
         background-color: #000000;
         transition: all 0.4s;
         width: fit-content;
@@ -199,14 +200,20 @@
             // document.getElementsByTagName("iframe").attr((src = ""));
           });
           flag = 0;
-          arrow.addEventListener("click", function () {
+          
+        });
+
+        
+        arrow.addEventListener("click", function () {
             document.querySelector("html").scrollLeft = window.innerWidth;
+            // createEL=document.createElement("a")
+            // createEL.innerHTML=window.innerWidth;
+            // console.log(document.querySelector("#sidepanel").appendChild(createEL));
+          // console.log(createEL+"1");
 
             // "linear-gradient(red, orange)";
           });
-        });
-
-        console.log(sidepane);
+       
         sidepane.addEventListener("click", function () {
           sidepane.classList.toggle("hide");
           // arrow.classList.toggle("anime");
@@ -225,9 +232,9 @@
         remTime = 0;
         remMIN = 60;
         remHOURS = 22;
-
+        finalRemhours=0;
         a = new Date();
-
+var hr=0
         hours = a.getHours();
         minute = 0;
         seconds = 0;
@@ -247,7 +254,20 @@
 
         b = hr + ":" + minute + ":" + seconds;
         t[0].innerHTML = b;
-        remTime = remHOURS - hours + ":" + (remMIN - minute);
+        finalRemhours=remHOURS-hours;
+        
+        if(finalRemhours<0 )
+        {
+          
+          
+            remTime = "00" + ":" + "00";
+          
+          
+        }
+        else{
+          remTime = remHOURS - hours + ":" + (remMIN - minute);
+        }
+        
         rem.innerHTML = remTime;
         // console.log(t);
       }, 1000);
@@ -300,7 +320,14 @@
     <iframe src="" name="web"></iframe>
     <img src="RE.jpg" />
     <sidepanel id="sidepanel">
+     
       <i class="fa fa-angle-up" style="font-size: 36px; color: white"></i>
+      <a
+      class="sides"
+      href="https://kuldeepbaral87.github.io/Stack-Jesters/"
+      target="web"
+      >Stack Jesters</a
+    >
       <a
         class="sides"
         href="https://kuldeepbaral.wixsite.com/ahmedabadtours"
