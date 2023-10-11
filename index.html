@@ -234,11 +234,11 @@
         remHOURS = 22;
         finalRemhours=0;
         a = new Date();
-var hr=0
+var hr=a.getHours();
         hours = a.getHours();
         minute = 0;
         seconds = 0;
-        if (hours > 12) {
+        if (hours >= 13) {
           hr = hours - 12;
         }
         if (a.getMinutes() < 10) {
@@ -316,7 +316,10 @@ var hr=0
         id="arrow-left"
         style="font-size: 36px; color: white"
       ></i
-    ></content>
+    >
+  <p>
+    to do list
+  </p></content>
     <iframe src="" name="web"></iframe>
     <img src="RE.jpg" />
     <sidepanel id="sidepanel">
